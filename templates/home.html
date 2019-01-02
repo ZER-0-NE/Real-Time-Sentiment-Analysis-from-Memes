@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Sentiment Analysis
+	</title>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<!-- <script src = "typed.js"></script> -->
+	<!-- <script data-main="static/js/main" src="/static/js/require.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  	<link rel="stylesheet" type="text/css" href = "static/css/main.css">
+</head>
+
+<body>
+	<div class = "topnav">
+		<a class = "active" href = "/home"> Home </a>
+		<a href = "/about"> About </a>
+		<a href = "https://zer-0-ne.github.io"> Contact </a>
+	</div>
+
+<h1 style = "font-size: 60px; margin-bottom: 10px; text-align: center; color: aliceblue"> Real-time Sentiment Analysis on Memes </h1>
+	
+<div id = "typed-string"> 
+	<p> This is a real-time sentiment analysis tool.</p>
+	<p>You can simply run it by giving an image as input in the drop location below.</p>
+</div>
+
+<span id="typed" style="font-size: 30px; color: aliceblue; white-space: pre"></span>
+
+<script>
+	  var typed = new Typed('#typed', {
+	    stringsElement: '#typed-string',
+	    backSpeed: 10,
+	    typeSpeed: 35,
+	    loop: true
+	  });
+</script>
+
+
+
+
+<div class="row">
+  <div class="column" >
+	<div id="drop-zone">
+    			Drop files here...
+    	<div id="clickHere">
+        or click here..
+        </div>
+         <input type="file" name="file" id="file" onchange="document.getElementById('blb').src = window.URL.createObjectURL(this.files[0])"/>
+         
+	</div>
+  </div>
+
+  <div class="column" >
+ <form method = "POST" action={{ url_for('home_and_upload')}} enctype="multipart/form-data">
+        <img id="blb" />
+        <input type="submit" value = "Upload pic"> 
+    </form>	
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	$(function () {
+    var dropZoneId = "drop-zone";
+    var buttonId = "clickHere";
+    var mouseOverClass = "mouse-over";
+
+    var dropZone = $("#" + dropZoneId);
+    var ooleft = dropZone.offset().left;
+    var ooright = dropZone.outerWidth() + ooleft;
+    var ootop = dropZone.offset().top;
+    var oobottom = dropZone.outerHeight() + ootop;
+    var inputFile = dropZone.find("input");
+    document.getElementById(dropZoneId).addEventListener("dragover", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.addClass(mouseOverClass);
+        var x = e.pageX;
+        var y = e.pageY;
+
+        if (!(x < ooleft || x > ooright || y < ootop || y > oobottom)) {
+            inputFile.offset({ top: y - 15, left: x - 100 });
+        } else {
+            inputFile.offset({ top: -400, left: -400 });
+        }
+
+    }, true);
+
+    // if (buttonId != "") {
+    //     var clickZone = $("#" + buttonId);
+
+    //     var oleft = clickZone.offset().left;
+    //     var oright = clickZone.outerWidth() + oleft;
+    //     var otop = clickZone.offset().top;
+    //     var obottom = clickZone.outerHeight() + otop;
+
+    //     $("#" + buttonId).mousemove(function (e) {
+    //         var x = e.pageX;
+    //         var y = e.pageY;
+    //         if (!(x < oleft || x > oright || y < otop || y > obottom)) {
+    //             inputFile.offset({ top: y - 15, left: x - 160 });
+    //         } else {
+    //             inputFile.offset({ top: -400, left: -400 });
+    //         }
+    //     });
+    }
+
+    document.getElementById(dropZoneId).addEventListener("drop", function (e) {
+        $("#" + dropZoneId).removeClass(mouseOverClass);
+    }, true);
+
+})
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 35%;
+  padding: 10px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+	
+
+</body>
+</html>
