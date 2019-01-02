@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Sentiment Analysis
+	</title>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<!-- <script src = "typed.js"></script> -->
+	<!-- <script data-main="static/js/main" src="/static/js/require.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  	<link rel="stylesheet" type="text/css" href = "static/css/main.css">
+</head>
+
+<body>
+	<div class = "topnav">
+		<a class = "active" href = "/home"> Home </a>
+		<a href = "/about"> About </a>
+		<a href = "https://zer-0-ne.github.io"> Contact </a>
+	</div>
+
+<h1 style = "font-size: 60px; margin-bottom: 10px; text-align: center; color: aliceblue"> Real-time Sentiment Analysis on Memes </h1>
+	
+<br />
+
+<div class="window">
+  <div class="terminal">
+    <p class="command">Here's what we've gathered from the meme you just sent:</p>
+    <p class="log">
+      <span>
+       {{ output }}
+      </span>
+      
+    </p>
+  </div>
+</div>
+
+<style >
+.window {
+      border-radius: 0px;
+    background: #222;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    margin: 21px auto;
+    width: 66%;
+  
+  &:before {
+    content: ' ';
+    display: block;
+    height: 48px;
+    background: #C6C6C6;
+  }
+  
+  &:after {
+    content: '. . .';
+    position: absolute;
+    left: 12px;
+    right: 0;
+    top: -3px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 96px;
+    color: #fff;
+    line-height: 0;
+    letter-spacing: -12px;
+  }
+}
+
+.terminal {
+  margin: 20px;
+  font-family: monospace;
+  font-size: 16px;
+  color: #22da26;
+  
+  .command { 
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: write-command 5s both;
+    
+    &:before {
+      content: '$ ';
+      color: #22da26;
+    }
+  }
+  
+  .log {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: write-log 5s both;
+  }
+
+  p:nth-child(2) {
+    animation-delay: 2s;
+  }
+  
+  p:nth-child(3) {
+    animation-delay: 8s;
+  }
+}
+
+@keyframes write-command {
+  0% {
+    width: 0%;
+  }
+  
+  
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes write-log {
+  0% {
+    height: 0;
+  }
+  
+  16% {
+    height: 0;
+  }
+  
+  17% {
+    height: 18px;
+  }
+  
+  33% {
+    height: 18px;
+  }
+  
+  34% {
+    height: 37px;
+  }
+  
+  51% {
+    height: 37px;
+  }
+  
+  52% {
+    height: 55px;
+  }
+  
+  69% {
+    height: 55px;
+  }
+  
+  70% {
+    height: 74px;
+  }
+  
+  87% {
+    height: 74px;
+  }
+  
+  88% {
+    height: 92px;
+  }
+  
+  88% {
+    height: 92px;
+  }
+  
+  99% {
+    height: 92px;
+  }
+  
+  100% {
+    height: 110px;
+  }
+}
+
+</style>
+
+</body>
+</html>
