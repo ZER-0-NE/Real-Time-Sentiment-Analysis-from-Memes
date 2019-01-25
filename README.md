@@ -37,7 +37,7 @@ python run.py
 ### Successful attempts:
 
 
-![s](/assets/images/pic1.jpg)
+![s](/static/images/pic1.jpg)
 
 
 ## Contributing
