@@ -1,7 +1,8 @@
 # Real Time Sentiment Analysis from Memes
 
-
-![](/static/images/2.jpg)
+<p align="center">
+  <img  src=/static/images/2.jpg/>
+</p>
 
 
 This project shows a simple way of doing sentiment analysis in your web-browser with the help of the vaderSentiment tool. This web-application is mainly suitable(and made) for memes and texts that appear in social-media bodies. The motivation for this project originates from the fact that there exists no such application which could analyze the sentiment from memes. Though memes being highly contextual and sarcastic, we believe the vaderSentiment tool is of great help in this regard. 
