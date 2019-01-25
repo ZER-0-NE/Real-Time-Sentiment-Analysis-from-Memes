@@ -13,6 +13,7 @@ UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+
 app = Flask(__name__)
 
 def allowed_file(filename):
@@ -50,7 +51,7 @@ def home_and_upload():
 
 					# make a check to see if median blurring should be done to remove
 					# noise
-					# gray = cv2.medianBlur(gray, 3)
+					gray = cv2.medianBlur(gray, 3)
 
 					# write the grayscale image to disk as a temporary file so we can
 					# apply OCR to it
@@ -78,7 +79,8 @@ def home_and_upload():
 									 Positive: {} \
 									 Negative: {} \
 									 Neutral: {} \
-								""".format(sentence, vs["pos"], vs["neg"], vs["neu"]))
+									 Compound: {}\
+								""".format(sentence, vs["pos"], vs["neg"], vs["neu"], vs["compound"]))
 					if num_words[0] > 20:
 						extracted = str(extracted)
 						analyzer = SentimentIntensityAnalyzer()
@@ -86,8 +88,8 @@ def home_and_upload():
 						paragraphSentiments = 0.0
 						for sentence in sentence_list:
 							vs = analyzer.polarity_scores(sentence)
-							s = '''{:-<69} {}
-							'''.format(sentence, str(vs["compound"]))
+							s = '''{:-<69}
+							'''.format(sentence)
 							paragraphSentiments += vs["compound"]
 							s += '''AVERAGE SENTIMENT FOR PARAGRAPH: 
 								''' + str(round(paragraphSentiments / len(sentence_list), 4))

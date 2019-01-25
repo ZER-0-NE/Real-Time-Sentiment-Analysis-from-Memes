@@ -38,30 +38,19 @@
 	    loop: true
 	  });
 </script>
-
-
-
-
-<div class="row">
-  <div class="column" >
-	<div id="drop-zone">
+	
+<div id="drop-zone">
     			Drop files here...
-    	<div id="clickHere">
+    <div id="clickHere">
         or click here..
-        </div>
-         <input type="file" name="file" id="file" onchange="document.getElementById('blb').src = window.URL.createObjectURL(this.files[0])"/>
-         
-	</div>
-  </div>
-
-  <div class="column" >
- <form method = "POST" action={{ url_for('home_and_upload')}} enctype="multipart/form-data">
-        <img id="blb" />
+    </div>
+    <form method = "POST" action={{ url_for('home_and_upload')}} enctype="multipart/form-data">
+        <img id="blb" width = "200px" height = "150px" />
+        <input type="file" name="file" id="file" onchange="document.getElementById('blb').src = window.URL.createObjectURL(this.files[0])"/>
         <input type="submit" value = "Upload pic"> 
-    </form>	
-  </div>
-</div>
+    </form>
 
+</div>
 
 <script type="text/javascript">
 	$(function () {
@@ -90,23 +79,23 @@
 
     }, true);
 
-    // if (buttonId != "") {
-    //     var clickZone = $("#" + buttonId);
+    if (buttonId != "") {
+        var clickZone = $("#" + buttonId);
 
-    //     var oleft = clickZone.offset().left;
-    //     var oright = clickZone.outerWidth() + oleft;
-    //     var otop = clickZone.offset().top;
-    //     var obottom = clickZone.outerHeight() + otop;
+        var oleft = clickZone.offset().left;
+        var oright = clickZone.outerWidth() + oleft;
+        var otop = clickZone.offset().top;
+        var obottom = clickZone.outerHeight() + otop;
 
-    //     $("#" + buttonId).mousemove(function (e) {
-    //         var x = e.pageX;
-    //         var y = e.pageY;
-    //         if (!(x < oleft || x > oright || y < otop || y > obottom)) {
-    //             inputFile.offset({ top: y - 15, left: x - 160 });
-    //         } else {
-    //             inputFile.offset({ top: -400, left: -400 });
-    //         }
-    //     });
+        $("#" + buttonId).mousemove(function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            if (!(x < oleft || x > oright || y < otop || y > obottom)) {
+                inputFile.offset({ top: y - 15, left: x - 160 });
+            } else {
+                inputFile.offset({ top: -400, left: -400 });
+            }
+        });
     }
 
     document.getElementById(dropZoneId).addEventListener("drop", function (e) {
@@ -116,26 +105,7 @@
 })
 </script>
 
-<style>
-* {
-  box-sizing: border-box;
-}
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 35%;
-  padding: 10px;
-  /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
 	
 
 </body>

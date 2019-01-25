@@ -40,17 +40,17 @@ body{
 }
 
 img{
-	    vertical-align: super;
-    width: 394px;
-    height: 291px;
+	    vertical-align: text-top;
+    width: 314px;
+    height: 249px;
 }
 
 #drop-zone {
         width: 300px;
     height: 219px;
     /* position: inherit; */
-    left: 43%;
-    top: 34px;
+    left: 15%;
+    top: 35px;
     margin-left: -171px;
     border: 5px dashed rgba(0,0,0,.3);
     border-radius: 29px;
@@ -59,14 +59,14 @@ img{
     position: relative;
     line-height: 154px;
     font-size: 25px;
-    color: rgba(0,0,0,.3);
+    color: rgba(0,0,0,.3);s
 }
 
 #drop-zone input {
-      position: absolute;
+        position: absolute;
     cursor: pointer;
-    left: 109px;
-    top: 162px;
+    left: 107px;
+    top: 173px;
 }
 
 /*Important*/
