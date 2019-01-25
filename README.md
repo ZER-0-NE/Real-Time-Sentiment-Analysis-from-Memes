@@ -34,8 +34,9 @@ python run.py
 ```
 
 
-## Successful attempts:
-
+<h2 align="center">
+  Successful attempts:
+</h2>
 
 <p align="center">
   <img  src=/static/images/pic1.jpg/>
@@ -53,7 +54,7 @@ python run.py
 
 
 <p align="center">
-  <img  src=/static/images/pic14.jpg/>
+  <img  src=/static/images/pic4.jpg/>
 </p>
 
 
