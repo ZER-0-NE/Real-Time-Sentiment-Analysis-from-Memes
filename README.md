@@ -37,7 +37,7 @@ python run.py
 
 
 <h2 align="center">
-  Successful attempts:
+  Successful attempts
 </h2>
 
 <p align="center">
