@@ -1,4 +1,6 @@
-# Real Time Sentiment Analysis from Memes
+<h1 align="center">
+  Real Time Sentiment Analysis from Memes
+</h1>
 
 <p align="center">
   <img  src=/static/images/2.jpg/>
