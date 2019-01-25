@@ -60,7 +60,22 @@ python run.py
 </p>
 
 
+<h2 align="center">
+  Unsuccessful attempts
+</h2>
 
+
+<p align="center">
+  <img  src=/static/images/u1.png/>
+</p>
+
+<p align="center">
+  <img  src=/static/images/u2.png/>
+</p>
+
+<p align="center">
+  <img  src=/static/images/u3.png/>
+</p>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
