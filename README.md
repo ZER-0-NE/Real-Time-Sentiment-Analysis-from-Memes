@@ -34,10 +34,29 @@ python run.py
 ```
 
 
-### Successful attempts:
+## Successful attempts:
 
 
-![s](/static/images/pic1.jpg)
+<p align="center">
+  <img  src=/static/images/pic1.jpg/>
+</p>
+
+
+<p align="center">
+  <img  src=/static/images/pic2.jpg/>
+</p>
+
+
+<p align="center">
+  <img  src=/static/images/pic3.jpg/>
+</p>
+
+
+<p align="center">
+  <img  src=/static/images/pic14.jpg/>
+</p>
+
+
 
 
 ## Contributing
